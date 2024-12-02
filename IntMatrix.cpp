@@ -1,10 +1,8 @@
-#include "Matrix.h"
+#include "IntMatrix.h"
 
-Matrix::Matrix()
-{
-}
+IntMatrix::IntMatrix() {}
 
-Matrix::Matrix(int rows, int cols)
+IntMatrix::IntMatrix(int rows, int cols)
 {
     data.resize(rows, vector<int>(cols));
 }
