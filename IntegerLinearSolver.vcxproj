@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="IntegerLinearSolver.cpp" />
     <ClCompile Include="IntMatrix.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntegerLinearSolver.h" />

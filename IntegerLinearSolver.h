@@ -10,4 +10,5 @@ private:
 
 public:
     IntegerLinearSolver(int N, int M);
+    void input();
 };
