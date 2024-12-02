@@ -14,6 +14,11 @@ public:
     IntMatrix();
     void initSize(int rows, int cols);
     void setRow(int row, vector<int> vec);
+    void addUnitMatrix(int startRow);
+    void swapColumns(int col1, int col2);
+    void substractColumnWithCoefficient(int targetCol, int sourceCol, int coef);
+
+    const std::vector<int>& operator[](int index) const;
     //IntMatrix(int rows, int cols);
     //void add(vector<int> vec);
 };
