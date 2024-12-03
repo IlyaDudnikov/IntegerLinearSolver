@@ -34,7 +34,29 @@ int IntegerLinearSolver::findNonzeroIndexExcluding(int row, int excludeIndex) co
     return -1;
 }
 
-IntegerLinearSolver::IntegerLinearSolver(int N, int M) : N(N), M(M) {
+int IntegerLinearSolver::countFreeVariables() const
+{
+    int K = 0;
+    for (size_t j = M - 1; j > 0; j--)
+    {
+        bool isZeroColumn = true;
+        for (size_t i = 0; i < N; i++)
+        {
+            if (matrix[i][j] != 0)
+            {
+                isZeroColumn = false;
+                break;
+            }
+        }
+
+        if (!isZeroColumn) break;
+        K++;
+    }
+
+    return K;
+}
+
+IntegerLinearSolver::IntegerLinearSolver(int N, int M) : N(N), M(M), K(0) {
     if (N < 1 || N >= 15 || M < 1 || M >= 15)
     {
         throw std::invalid_argument("The values of N and M must range between 1 and 15, exclusive.");
@@ -93,5 +115,21 @@ void IntegerLinearSolver::solve()
 
             matrix.substractColumnWithCoefficient(j, minIndex, q);
         }
+    }
+}
+
+void IntegerLinearSolver::printResult()
+{
+    K = countFreeVariables();
+    std::cout << K << '\n';
+    N, M - K;
+
+    for (size_t i = N; i < N + M; i++)
+    {
+        for (size_t j = M - K; j < M + 1; j++)
+        {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << '\n';
     }
 }

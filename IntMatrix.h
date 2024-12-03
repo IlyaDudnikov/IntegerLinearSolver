@@ -19,6 +19,4 @@ public:
     void substractColumnWithCoefficient(int targetCol, int sourceCol, int coef);
 
     const std::vector<int>& operator[](int index) const;
-    //IntMatrix(int rows, int cols);
-    //void add(vector<int> vec);
 };

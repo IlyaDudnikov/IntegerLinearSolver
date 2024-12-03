@@ -47,13 +47,3 @@ const std::vector<int>& IntMatrix::operator[](int index) const
 {
     return data[index];
 }
-
-//IntMatrix::IntMatrix(int rows, int cols)
-//{
-//    data.resize(rows, vector<int>(cols));
-//}
-
-//void IntMatrix::add(vector<int> vec)
-//{
-//    data.push_back(vec);
-//}
